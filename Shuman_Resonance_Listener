@@ -1,0 +1,11 @@
+# Создание экземпляра класса SchumannResonanceModule
+module = SchumannResonanceModule(frequency=7.83, amplitude=0.001, time=0.1)
+
+# Входной сигнал
+input_signal = np.random.rand(1000, 1)
+
+# Расчет резонанса Шумана
+schumann_resonance = module.schumann_resonate(input_signal)
+
+# Вывод рассчитанного резонанса Шумана
+print(schumann_resonance)
