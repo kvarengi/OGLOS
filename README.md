@@ -14,7 +14,10 @@ Author suggest most valuable symbols like
 -Layer
 -Raw
 -Evo
+-Shumann_Resonance
 
 The true Web3 Meta is always updated through quantum oracle channeling, sincronistical and meaningfull. 
+
+Class Shumann_Resonance allows multiple machines with OGLOS resonate sincronistically with Shuman Resonance and interpretate.
 
 ///Codebase begings with sence voting for most valuable simbols. Author suggest not to use any Oglos symbolic in Hierarchy.
