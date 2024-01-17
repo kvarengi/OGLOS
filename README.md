@@ -10,6 +10,7 @@ Author suggest most valuable symbols like
 -Space
 -See
 -Eho
+-Resonance
 -Layer
 -Raw
 -Evo
