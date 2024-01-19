@@ -1,0 +1,71 @@
+import numpy as np
+import tensorflow as tf
+
+# Определение классов для двух нейронных сетей
+class NeuralNetwork1:
+    def __init__(self, input_shape, output_shape, activation):
+        # Инициализация параметров
+        self.input_shape = input_shape
+        self.output_shape = output_shape
+        self.activation = activation
+        
+        # Инициализация модели нейронной сети
+        self.model = tf.keras.Sequential([
+            tf.keras.layers.Dense(64, activation=activation, input_shape=input_shape),
+            tf.keras.layers.Dense(64, activation=activation),
+            tf.keras.layers.Dense(output_shape)
+        ])
+        
+        # Компиляция модели
+        self.model.compile(optimizer='adam', loss='mse')
+        
+    def predict(self, input_data):
+        # Предсказание выходных данных на основе входных данных
+        output_data = self.model.predict(input_data)
+        
+        return output_data
+
+class NeuralNetwork2:
+    def __init__(self, input_shape, output_shape, activation):
+        # Инициализация параметров
+        self.input_shape = input_shape
+        self.output_shape = output_shape
+        self.activation = activation
+        
+        # Инициализация модели нейронной сети
+        self.model = tf.keras.Sequential([
+            tf.keras.layers.Dense(64, activation=activation, input_shape=input_shape),
+            tf.keras.layers.Dense(64, activation=activation),
+            tf.keras.layers.Dense(output_shape)
+        ])
+        
+        # Компиляция модели
+        self.model.compile(optimizer='adam', loss='mse')
+        
+    def predict(self, input_data):
+        # Предсказание выходных данных на основе входных данных
+        output_data = self.model.predict(input_data)
+        
+        return output_data
+
+# Определение функции для обучения двух нейронных сетей для создания резонанса
+def train_neural_networks(neural_network1, neural_network2, training_data, epochs=100):
+    # Обучение первой нейронной сети
+    neural_network1.model.fit(training_data[0], training_data[1], epochs=epochs)
+    
+    # Обучение второй нейронной сети с использованием обратного распространения ошибки
+    for i in range(epochs):
+        # Получение выходных данных первой нейронной сети
+        output_data1 = neural_network1.predict(training_data[0])
+        
+        # Получение выходных данных второй нейронной сети
+        output_data2 = neural_network2.predict(output_data1)
+        
+        # Вычисление разницы между выходными данными и ожидаемыми выходными данными
+        error = training_data[2] - output_data2
+        
+        # Обновление весов второй нейронной сети с использованием разницы в ошибке
+        neural_network2.model.fit(output_data1, error, epochs=1)
+
+# Пример использования функции для обучения двух нейронных сетей для создания резонанса
+training_data = [(X_train, Y_train, Y_train
