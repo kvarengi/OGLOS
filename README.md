@@ -1,4 +1,7 @@
 # OGLOS
+def Contract_id([n})
+set_license(contract_id, "GNU GPL")
+
 
 import requests
 
