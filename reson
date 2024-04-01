@@ -68,4 +68,4 @@ def train_neural_networks(neural_network1, neural_network2, training_data, epoch
         neural_network2.model.fit(output_data1, error, epochs=1)
 
 # Пример использования функции для обучения двух нейронных сетей для создания резонанса
-training_data = [(X_train, Y_train, Y_train
+training_data = [(X_train, Y_train, Y_train)]
